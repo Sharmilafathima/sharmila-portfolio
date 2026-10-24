@@ -1,0 +1,90 @@
+/* Updated hero: balanced columns, upright portrait and full-name wordmark. */
+.brand-motif{display:inline-block;width:.85em;height:.85em;vertical-align:-.08em;overflow:visible;flex-shrink:0}
+.discipline-strip .brand-motif{width:.65em;height:.65em}
+/* A quiet, contrasting toolkit panel with locally drawn app badges. */
+.header nav{gap:26px}
+.tools-section{background:#292d26;color:#f5f2ec;padding:76px 0 60px}
+.tools-section .section-eyebrow{color:#bcc0af}
+.tools-section .section-heading{margin-bottom:34px}
+.tools-section .section-heading h2{font-size:clamp(35px,3.6vw,52px)}
+.tools-section .section-heading h2 em{color:#edba9c}
+.tools-section .section-heading>p{color:#c3c6ba;font-size:13px;max-width:285px}
+.tool-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.tool-card{border:1px solid #505648;border-radius:5px;padding:25px 20px;min-height:180px;display:flex;flex-direction:column;align-items:flex-start;gap:22px;background:#ffffff03}
+.tool-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:48px;height:48px;border-radius:10px;font-family:Arial,sans-serif;font-size:28px;font-weight:600;line-height:1;letter-spacing:-1px}
+.tool-icon svg{display:block;width:35px;height:35px}
+.figma-icon{background:#f5f2ec}.figma-icon svg{width:25px;height:37px}
+.stitch-icon{background:#dce8d1;color:#3a6040}
+.illustrator-icon{background:#351b08;color:#ffad30;border:1px solid #79512a}
+.photoshop-icon{background:#112b45;color:#6cc6ff;border:1px solid #3d617f}
+.codex-icon{background:#e9e9df;color:#252923}
+.claude-icon{background:#d7ac93;color:#382b24;font-family:Georgia,serif;font-weight:400;font-size:37px}
+.ai-icon{background:#444c3b;color:#dbdfc7;border:1px solid #647055}
+.tool-card h3{font-size:15px;line-height:1.4;font-weight:600;letter-spacing:-.3px}
+.tool-card p{font-size:10px;color:#c3c6ba;line-height:1.7;margin-top:5px}
+.more-tools{grid-column:span 2;flex-direction:row;align-items:center;gap:20px}
+.more-tools .tool-plus{font-size:28px;color:#bdc4ad;margin-left:auto;font-weight:400}
+.workflow-note{border-top:1px solid #505648;margin-top:32px;padding-top:25px;display:grid;grid-template-columns:1fr 3fr;gap:20px}
+.workflow-label{font-size:9px;letter-spacing:1.5px;color:#bdc4ad;margin-top:4px}
+.workflow-note p{font-size:15px;line-height:1.8;max-width:720px}
+.workflow-note p span{color:#bdc4ad;font-size:12px}
+@media(min-width:761px) and (max-width:1050px){.header nav{gap:14px;font-size:12px}.nav-contact{padding:10px 13px}.tool-card{padding:21px 15px}.tool-card h3{font-size:13px}}
+@media(max-width:760px){.tools-section{padding:48px 0 38px}.tools-section .section-heading h2{font-size:35px}.tools-section .section-heading>p{max-width:390px;font-size:12px}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tool-card{min-height:164px;padding:20px 15px;gap:18px}.tool-card h3{font-size:13px}.tool-card p{font-size:10px}.tool-icon{width:43px;height:43px;font-size:26px}.more-tools{min-height:105px;gap:15px}.workflow-note{grid-template-columns:1fr;gap:12px;margin-top:26px;padding-top:20px}.workflow-note p{font-size:14px}.workflow-note p span{font-size:12px}.workflow-label{margin-top:0}}
+.project-open{overflow:hidden}
+.project-arrow{background:transparent}
+.project-viewer{width:min(1180px,96vw);height:92vh;height:92dvh;max-height:96dvh;overflow:hidden;padding:0}
+.project-viewer .dialog-content{position:relative;padding:20px 76px 16px 26px;border-bottom:1px solid var(--line)}
+.project-viewer .dialog-content h2{font-size:clamp(20px,2.5vw,30px);margin:5px 0 3px;line-height:1.25}
+.project-viewer .dialog-content .viewer-hint{font-size:11px;line-height:1.5;margin:0}
+.project-viewer .dialog-close{top:20px;right:18px}
+.project-viewer[open]{display:flex;flex-direction:column}
+.project-embed{display:block;width:100%;flex:1;min-height:0;border:0;background:#fff}
+.project-viewer .dialog-content{flex-shrink:0}
+.project-pages{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;background:#fff;scrollbar-gutter:stable}
+.project-viewer .project-pages img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;background:#fff}
+.project-video{display:block;width:100%;aspect-ratio:16/9;border:0;background:#191919}
+.page-error{padding:35px;font-size:14px;color:var(--muted)}
+/* Continuous horizontal toolkit; pause on hover, focus or explicit control. */
+.tools-section{padding-bottom:68px}
+.tools-section .section-heading{align-items:center}
+.tools-pause{display:flex;align-items:center;gap:13px;background:transparent;color:#f5f2ec;border:1px solid #68705e;border-radius:30px;padding:10px 17px;font-size:11px;white-space:nowrap}
+.tools-pause:hover{background:#ffffff0c}
+.tools-marquee{overflow:hidden;position:relative;margin-top:32px;mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent)}
+.tools-track{display:flex;width:max-content;animation:tool-drift 38s linear infinite;will-change:transform}
+.tools-section .tool-grid{display:flex;gap:14px;flex:none;width:max-content;padding:0 14px 0 0}
+.tools-section .tool-card{display:flex;flex-direction:row;align-items:center;gap:17px;min-height:108px;width:auto;min-width:212px;padding:25px 28px;flex:none;border-radius:5px}
+.tools-section .tool-card h3{font-size:16px;white-space:nowrap}
+.tools-section .tool-card.more-tools{min-width:220px}
+.tools-section .tool-icon{width:47px;height:47px}
+.tools-section .tool-icon img{display:block;width:100%;height:100%;object-fit:contain;border-radius:9px}
+.tools-section .stitch-icon,.tools-section .codex-icon,.tools-section .claude-icon{background:transparent;border:0}
+.tools-section .codex-icon{background:#f5f2ec;padding:5px}
+.tools-section .claude-icon{background:#f5f2ec;padding:4px}
+.tools-marquee:hover .tools-track,.tools-marquee:focus-within .tools-track,.tools-marquee.paused .tools-track{animation-play-state:paused}
+@keyframes tool-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:760px){.tools-section{padding-bottom:40px}.tools-section .section-heading{display:flex;align-items:flex-end;gap:15px}.tools-section .section-heading h2{font-size:31px}.tools-pause{font-size:9px;padding:8px 12px;gap:7px}.tools-section .tool-card{min-width:190px;min-height:96px;padding:20px 23px;gap:14px}.tools-section .tool-card h3{font-size:14px}.tools-section .tool-icon{width:42px;height:42px}.tools-marquee{margin-top:26px}}
+@media(max-width:380px){.tools-section .section-heading{display:block}.tools-pause{margin-top:20px}}
+@media(prefers-reduced-motion:reduce){.tools-track{animation:none;transform:none;will-change:auto}.tools-track>.tool-grid[aria-hidden="true"]{display:none}.tools-marquee{overflow-x:auto;mask-image:none;padding-bottom:12px}.tools-pause{display:none}}
+@media(max-width:760px){.project-viewer{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0;margin:0}.project-viewer .dialog-content{padding:17px 65px 14px 18px}.project-viewer .dialog-close{top:17px;right:13px}.project-viewer .dialog-content .viewer-hint{font-size:10px}}
+.header .wordmark{font-size:24px;letter-spacing:-1px;gap:8px;white-space:nowrap}
+.header .wordmark span{font-size:29px}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:52px;align-items:center;padding-top:58px}
+.hero-copy{width:auto;padding:0 0 54px}
+.hero h1{font-size:clamp(55px,5.25vw,76px);letter-spacing:-3.8px;line-height:1.12;margin-top:25px}
+.hero h1>span{display:block;width:max-content;max-width:100%}
+.hero .intro{font-size:15px;max-width:420px;line-height:1.85;text-wrap:pretty;margin-top:25px}
+.hero-art{position:relative;right:auto;top:auto;width:100%;height:510px;margin:0 0 54px}
+.portrait-frame{inset:0;border-radius:48% 48% 4px 4px;transform:none;background:#dedfce}
+.portrait-frame:after{inset:16px;z-index:0}
+.portrait-frame img{position:relative;z-index:1;transform:none;width:100%;height:100%;object-fit:cover;object-position:center 8%}
+.art-label{z-index:2;bottom:20px;left:-24px;font-size:12px;padding:13px 20px;transform:rotate(-5deg)}
+.vertical-note{right:-27px;top:135px;font-size:8px}
+.hero-bottom{grid-column:1/-1;width:100%}
+.hero .availability{margin-top:24px}
+.hero-actions .text-link{font-size:13px;white-space:nowrap}
+.capability:last-child{border-bottom:1px solid var(--line)}
+.footer .wordmark{font-size:21px;letter-spacing:-.8px;gap:6px}
+@media(min-width:1500px){.hero-art{height:550px}.hero h1{font-size:76px}}
+@media(max-width:1050px) and (min-width:761px){.hero{column-gap:32px;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}.hero h1{font-size:clamp(43px,5.3vw,57px);letter-spacing:-2.8px}.hero-art{height:455px}.header .wordmark{font-size:21px}.header nav{gap:22px}.hero-actions{gap:18px}.hero-actions .button{font-size:12px;padding:13px 16px;gap:14px}.hero-actions .text-link{font-size:11px}.hero .intro{font-size:14px}.art-label{left:-12px;font-size:10px;padding:12px 15px}.label-star{font-size:35px}}
+@media(max-width:760px){.header .wordmark{font-size:20px;gap:4px;letter-spacing:-.8px}.header .wordmark span{font-size:25px}.hero{display:flex;flex-direction:column;align-items:stretch;padding-top:38px;gap:0}.hero-copy{width:100%;padding-bottom:30px}.hero h1{font-size:clamp(39px,9.4vw,66px);line-height:1.16;letter-spacing:-2.5px;margin-top:22px}.hero .intro{font-size:14px;max-width:430px}.hero-art{width:86%;height:440px;max-width:390px;margin:10px auto 32px}.portrait-frame img{object-position:center 9%}.art-label{bottom:18px;left:-18px;padding:12px 17px}.vertical-note{right:-23px;top:120px}.hero-bottom{margin-top:0}.hero-actions{gap:23px}.hero-actions .text-link{font-size:12px}.footer .wordmark{font-size:18px}.menu-button{padding:7px 11px;gap:8px}}
+@media(max-width:380px){.header .wordmark{font-size:17px}.header .wordmark span{font-size:22px}.hero h1{font-size:36px;letter-spacing:-2px}.hero-art{height:375px}.hero-actions{gap:17px}.hero-actions .text-link{font-size:11px}.footer .wordmark{font-size:17px}}
