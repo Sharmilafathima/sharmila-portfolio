@@ -1,0 +1,6 @@
+node_modules/
+.openai/
+.env
+.env.*
+layout-check.html
+*.tar.gz

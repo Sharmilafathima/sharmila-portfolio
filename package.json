@@ -1,0 +1,6 @@
+{
+  "name": "sharmila-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "node server.mjs", "check": "node --check dist/app.js && node --check dist/portfolio-data.js" }
+}
