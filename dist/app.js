@@ -100,6 +100,23 @@ for (const [label,url] of [['Email',profile.email ? 'mailto:'+profile.email : nu
 if(profile.email || profile.linkedin) document.querySelector('#contact-note').hidden = true;
 document.querySelector('#year').textContent = new Date().getFullYear();
 
+const disciplineStrip = document.querySelector('.discipline-strip');
+const disciplineTrack = document.querySelector('.discipline-track');
+const disciplineList = document.querySelector('.discipline-items');
+const pauseDisciplines = document.querySelector('.discipline-pause');
+if (disciplineList && pauseDisciplines) {
+  const repeatedDisciplines = disciplineList.cloneNode(true);
+  repeatedDisciplines.setAttribute('aria-hidden','true');
+  repeatedDisciplines.inert = true;
+  disciplineTrack.append(repeatedDisciplines);
+  pauseDisciplines.addEventListener('click', () => {
+    const paused = disciplineStrip.classList.toggle('paused');
+    pauseDisciplines.setAttribute('aria-pressed',String(paused));
+    pauseDisciplines.setAttribute('aria-label',paused ? 'Resume scrolling design skills' : 'Pause scrolling design skills');
+    pauseDisciplines.querySelector('span').textContent = paused ? '▷' : 'Ⅱ';
+  });
+}
+
 const toolsMarquee = document.querySelector('.tools-marquee');
 const toolsTrack = document.querySelector('.tools-track');
 const toolsList = toolsTrack?.querySelector('.tool-grid');

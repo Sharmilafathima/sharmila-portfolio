@@ -1,6 +1,19 @@
 /* Updated hero: balanced columns, upright portrait and full-name wordmark. */
 .brand-motif{display:inline-block;width:.85em;height:.85em;vertical-align:-.08em;overflow:visible;flex-shrink:0}
 .discipline-strip .brand-motif{width:.65em;height:.65em}
+.discipline-strip{position:relative}
+.discipline-strip>.discipline-window{display:block;max-width:none;width:calc(100% - 68px);padding:0;margin:0;overflow:hidden}
+.discipline-track{display:flex;width:max-content;animation:discipline-drift 48s linear infinite;will-change:transform}
+.discipline-items{display:flex;align-items:center;gap:34px;flex-shrink:0;list-style:none;margin:0;padding:0 34px 0 28px}
+.discipline-items li{display:flex;align-items:center;gap:34px;white-space:nowrap}
+.discipline-items b{display:flex;align-items:center}
+.discipline-pause{position:absolute;right:20px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:32px;height:32px;border:1px solid #24262188;border-radius:50%;background:transparent;padding:0}
+.discipline-pause span{font-size:15px;line-height:1}
+.discipline-pause:hover{background:#ffffff30}
+.discipline-window:hover .discipline-track,.discipline-window:focus-within .discipline-track,.discipline-strip.paused .discipline-track{animation-play-state:paused}
+@keyframes discipline-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:760px){.discipline-items,.discipline-items li{gap:25px}.discipline-items{padding:0 25px 0 20px}.discipline-pause{right:15px;width:29px;height:29px}}
+@media(prefers-reduced-motion:reduce){.discipline-track{animation:none;transform:none;will-change:auto}.discipline-items[aria-hidden="true"]{display:none}.discipline-strip>.discipline-window{width:100%;overflow-x:auto}.discipline-pause{display:none}}
 /* A quiet, contrasting toolkit panel with locally drawn app badges. */
 .header nav{gap:26px}
 .tools-section{background:#292d26;color:#f5f2ec;padding:76px 0 60px}
