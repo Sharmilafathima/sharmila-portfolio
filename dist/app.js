@@ -4,6 +4,9 @@ import { projectDetails } from './project-details.js';
 const external = (link, url) => { link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer'; return link; };
 const grid = document.querySelector('#project-grid');
 const status = document.querySelector('#work-status');
+const isWorkPage = document.body.dataset.page === 'work';
+const displayedProjects = isWorkPage ? projects : projects.filter(p => p.featured).slice(0,4);
+document.querySelectorAll('[data-project-count]').forEach(el => { el.textContent = String(projects.length).padStart(2,'0'); });
 const dialog = document.createElement('dialog');
 dialog.className = 'project-viewer';
 dialog.setAttribute('aria-labelledby', 'project-title');
@@ -68,7 +71,7 @@ function projectCard(project) {
   info.append(text,link); article.append(cover,info); return article;
 }
 function renderProjects(filter = 'All') {
-  const matches = projects.filter(p => filter === 'All' || p.category === filter);
+  const matches = displayedProjects.filter(p => filter === 'All' || p.category === filter);
   grid.replaceChildren(...matches.map(projectCard));
   if (!matches.length) {
     const empty = document.createElement('div'); empty.className = 'empty-state';
@@ -90,14 +93,14 @@ function closeMenu(){ nav.classList.remove('open'); menu.setAttribute('aria-expa
 menu.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded',String(open)); menu.setAttribute('aria-label',open ? 'Close navigation' : 'Open navigation'); });
 nav.querySelectorAll('a').forEach(a => a.addEventListener('click',closeMenu));
 document.addEventListener('keydown',e => { if(e.key === 'Escape' && nav.classList.contains('open')){closeMenu();menu.focus();} });
-if (profile.portrait) { const img = document.createElement('img'); img.src = profile.portrait; img.alt = 'Sharmila Fathima, Visual Designer'; img.fetchPriority = 'high'; document.querySelector('#portrait').replaceChildren(img); }
-if (profile.resume) { const link = external(document.createElement('a'),profile.resume); link.className = 'text-link'; link.textContent = 'View my résumé ↗'; document.querySelector('#resume-hero').replaceWith(link); }
+if (profile.portrait && document.querySelector('#portrait')) { const img = document.createElement('img'); img.src = profile.portrait; img.alt = 'Sharmila Fathima, Visual Designer'; img.fetchPriority = 'high'; document.querySelector('#portrait').replaceChildren(img); }
+if (profile.resume && document.querySelector('#resume-hero')) { const link = external(document.createElement('a'),profile.resume); link.className = 'text-link'; link.textContent = 'View my résumé ↗'; document.querySelector('#resume-hero').replaceWith(link); }
 const contactLinks = document.querySelector('#contact-links');
-for (const [label,url] of [['Email',profile.email ? 'mailto:'+profile.email : null],['LinkedIn',profile.linkedin],['Behance',profile.behance],['Résumé',profile.resume]]) {
+for (const [label,url] of contactLinks ? [['Email',profile.email ? 'mailto:'+profile.email : null],['LinkedIn',profile.linkedin],['Behance',profile.behance],['Résumé',profile.resume]] : []) {
   if (url) { const a = document.createElement('a'); if(url.startsWith('mailto:')) a.href = url; else external(a,url); const text = document.createElement('span'); text.textContent = label; const arrow = document.createElement('span'); arrow.textContent = '↗'; a.append(text,arrow); contactLinks.append(a); }
   else { const pending = document.createElement('div'); pending.className = 'pending-link'; const name = document.createElement('span'); name.textContent = label; const note = document.createElement('small'); note.textContent = 'To be added'; pending.append(name,note); contactLinks.append(pending); }
 }
-if(profile.email || profile.linkedin) document.querySelector('#contact-note').hidden = true;
+if((profile.email || profile.linkedin) && document.querySelector('#contact-note')) document.querySelector('#contact-note').hidden = true;
 document.querySelector('#year').textContent = new Date().getFullYear();
 
 const disciplineStrip = document.querySelector('.discipline-strip');

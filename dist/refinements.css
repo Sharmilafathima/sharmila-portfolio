@@ -1,4 +1,18 @@
 /* Updated hero: balanced columns, upright portrait and full-name wordmark. */
+.work-heading-actions{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:20px;flex-shrink:0}
+.work-heading-actions p{font-size:13px;color:var(--muted);line-height:1.8}
+.work-heading-actions .button{font-size:12px;padding:13px 20px;gap:25px}
+.work-footer [data-project-count]{margin-left:0}
+nav [aria-current="page"]{color:#a43621}
+.work-archive{padding:35px 0 65px}
+.archive-back{font-size:11px;color:var(--muted);display:inline-block;margin-bottom:42px}
+.archive-back:hover{color:#a43621}
+.work-intro .section-eyebrow{color:var(--muted)}
+.archive-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin:25px 0 45px}
+.archive-heading h1{margin:0;font-size:clamp(45px,5.8vw,78px);line-height:1.12;letter-spacing:-3.8px}
+.archive-heading h1 em{color:#bd472f}
+.archive-heading>p{font-size:13px;color:var(--muted);line-height:1.9;margin-bottom:4px;max-width:310px}
+@media(max-width:760px){.work-heading-actions{text-align:left;align-items:flex-start;margin-top:20px;gap:16px}.work-heading-actions p{font-size:12px}.work-archive{padding:25px 0 40px}.archive-back{margin-bottom:30px}.archive-heading{display:block;margin:22px 0 30px}.archive-heading h1{font-size:clamp(39px,9vw,62px);letter-spacing:-2.4px}.archive-heading>p{font-size:12px;margin-top:20px}.work-archive .work-footer>span{max-width:150px}}
 .brand-motif{display:inline-block;width:.85em;height:.85em;vertical-align:-.08em;overflow:visible;flex-shrink:0}
 .discipline-strip .brand-motif{width:.65em;height:.65em}
 .discipline-strip{position:relative}
